@@ -1,0 +1,47 @@
+# Site settings
+title: EncodedBytes
+description: >-
+  Expert solutions in Information Technology, Artificial Intelligence,
+  Systems Administration, and DevOps. Transforming businesses through
+  innovative technology and intelligent automation.
+baseurl: ""
+url: "https://encodedbytes.github.io"
+
+# Company information
+company:
+  name: EncodedBytes
+  tagline: "Innovating Technology, Encoding Success"
+  email: contact@encodedbytes.com
+  phone: "+1 (555) 123-4567"
+
+# Social media
+social:
+  github: encodedbytes
+  linkedin: encodedbytes
+  twitter: encodedbytes
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO settings
+lang: en-US
+author: EncodedBytes Team
+
+# Google Analytics (optional - add your tracking ID)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
