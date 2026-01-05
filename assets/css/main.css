@@ -148,8 +148,10 @@ a:hover {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
@@ -161,6 +163,12 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.nav-brand {
+    flex-shrink: 0;
 }
 
 .nav-brand a {
@@ -170,6 +178,7 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
+    white-space: nowrap;
 }
 
 .logo-icon {
@@ -185,12 +194,20 @@ a:hover {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0;
 }
 
 .nav-menu a {
     color: var(--text-primary);
     font-weight: 500;
     position: relative;
+    white-space: nowrap;
+    padding: 0.5rem 0;
 }
 
 .nav-menu a::after {
@@ -606,9 +623,70 @@ a:hover {
 /* ===================================
    Responsive Design
    =================================== */
+
+/* Medium screens - reduce navigation gap */
+@media (max-width: 1200px) {
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .navbar .container {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Tablet and smaller */
 @media (max-width: 968px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
+
+    .navbar .container {
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--text-light);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1.125rem;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
 
     .hero .container {
         grid-template-columns: 1fr;
@@ -633,14 +711,6 @@ a:hover {
 
     .footer-content {
         grid-template-columns: 1fr;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
     }
 }
 
