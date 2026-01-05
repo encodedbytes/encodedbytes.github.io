@@ -124,7 +124,7 @@ This is a private company website. For business inquiries, please contact us thr
 
 ## 📧 Contact
 
-- **Email**: contact@encodedbytes.com
+- **Email**: support@encodedbytes.com
 - **Phone**: +1 (555) 123-4567
 - **GitHub**: [@encodedbytes](https://github.com/encodedbytes)
 
