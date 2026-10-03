@@ -8,6 +8,7 @@ _site/
 *.gem
 .bundle
 vendor/
+Gemfile.lock
 
 # OS Files
 .DS_Store
