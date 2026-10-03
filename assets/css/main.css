@@ -274,18 +274,17 @@ a:hover {
 }
 
 .logo-icon {
-    display: inline-grid;
-    place-items: center;
+    display: block;
     width: 2rem;
     height: 2rem;
     border-radius: 8px;
-    background: var(--primary-soft);
     border: 1px solid rgba(88, 166, 255, 0.3);
-    color: var(--primary-color);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: -0.04em;
+}
+
+.nav-brand .logo-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 10px;
 }
 
 .nav-menu {
