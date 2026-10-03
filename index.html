@@ -22,7 +22,7 @@ title: Home
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -53,9 +53,10 @@ title: Home
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
+                <span class="eyebrow">IT · AI · Systems · DevOps</span>
                 <h1 class="hero-title">
                     <span class="gradient-text">Innovating Technology,</span>
-                    <br>Encoding Success
+                    <br><span class="muted">Encoding Success</span>
                 </h1>
                 <p class="hero-subtitle">
                     Expert solutions in Information Technology, Artificial Intelligence,
@@ -63,15 +64,30 @@ title: Home
                     innovative technology and intelligent automation.
                 </p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#contact" class="btn btn-primary">Get Started <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
                     <a href="#services" class="btn btn-secondary">Our Services</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="code-animation">
-                    <div class="code-line"></div>
-                    <div class="code-line"></div>
-                    <div class="code-line"></div>
+                <div class="terminal" aria-hidden="true">
+                    <div class="terminal-bar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="terminal-title">~/infra — deploy</span>
+                    </div>
+<pre class="terminal-body"><span class="prompt">$</span> <span class="cmd">terraform apply -auto-approve</span>
+  <span class="add">+</span> aws_eks_cluster.prod        <span class="dim">created</span>
+  <span class="add">+</span> helm_release.inference      <span class="dim">created</span>
+  <span class="add">+</span> aws_cloudwatch_alarm.p99    <span class="dim">created</span>
+<span class="ok">Apply complete!</span> Resources: 14 added, 0 changed.
+
+<span class="prompt">$</span> <span class="cmd">kubectl get pods -n ml</span>
+<span class="dim">NAME                  READY   STATUS</span>
+inference-7f9c4b      1/1     <span class="ok">Running</span>
+gateway-5d2e8a        1/1     <span class="ok">Running</span>
+<span class="prompt">$</span> <span class="cursor"></span></pre>
+                </div>
+                <div class="status-chip" aria-hidden="true">
+                    <span class="pulse"></span>All systems operational
                 </div>
             </div>
         </div>
@@ -81,6 +97,7 @@ title: Home
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">01 / about</span>
                 <h2>About EncodedBytes</h2>
                 <p>Your trusted partner in digital transformation</p>
             </div>
@@ -121,12 +138,13 @@ title: Home
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">02 / services</span>
                 <h2>Our Services</h2>
                 <p>Comprehensive technology solutions for modern businesses</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🤖</div>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9.5 9.5h5v5h-5z"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
                     <h3>Artificial Intelligence</h3>
                     <p>
                         Harness the power of AI and machine learning to automate processes,
@@ -142,7 +160,7 @@ title: Home
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🖥️</div>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></svg></div>
                     <h3>Systems Administration</h3>
                     <p>
                         Expert management and optimization of your IT infrastructure. We ensure
@@ -158,7 +176,7 @@ title: Home
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">⚙️</div>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7M18 11.5c0 3-3 3.5-6 3.5H8.5"/></svg></div>
                     <h3>DevOps Solutions</h3>
                     <p>
                         Streamline your development and operations with modern DevOps practices.
@@ -174,7 +192,7 @@ title: Home
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">☁️</div>
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.25 4.25 0 0 1-.5 8.5H7z"/></svg></div>
                     <h3>Cloud Solutions</h3>
                     <p>
                         Migrate, optimize, and manage your cloud infrastructure across AWS,
@@ -196,6 +214,7 @@ title: Home
     <section id="expertise" class="expertise">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">03 / expertise</span>
                 <h2>Our Expertise</h2>
                 <p>Technologies and tools we master</p>
             </div>
@@ -248,27 +267,28 @@ title: Home
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
+                <span class="eyebrow">04 / contact</span>
                 <h2>Get In Touch</h2>
                 <p>Let's discuss how we can help transform your business</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
+                        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></div>
                         <div>
                             <h4>Email</h4>
                             <p><a href="mailto:support@encodedbytes.com">support@encodedbytes.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📱</div>
+                        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3h2.1a1 1 0 0 1 .95.68l1.1 3.3a1 1 0 0 1-.25 1.03L8.8 9.6a12 12 0 0 0 5.6 5.6l1.6-1.6a1 1 0 0 1 1.02-.25l3.3 1.1a1 1 0 0 1 .68.95v2.1A1.5 1.5 0 0 1 19.5 19 14.5 14.5 0 0 1 5 4.5z"/></svg></div>
                         <div>
                             <h4>Phone</h4>
                             <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">💼</div>
+                        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div>
                         <div>
                             <h4>GitHub</h4>
                             <p><a href="https://github.com/encodedbytes" target="_blank" rel="noopener">github.com/encodedbytes</a></p>

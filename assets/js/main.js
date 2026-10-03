@@ -186,33 +186,6 @@
     });
 
     // ===================================
-    // Service Card Tilt Effect
-    // ===================================
-    const serviceCards = document.querySelectorAll('.service-card');
-
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'transform 0.3s ease';
-        });
-
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-
-            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        });
-    });
-
-    // ===================================
     // Lazy Loading for Images
     // ===================================
     if ('IntersectionObserver' in window) {
@@ -303,21 +276,6 @@
 
     function handleMobileMenu(e) {
         if (e.matches) {
-            mobileMenu.style.cssText = `
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                padding: 2rem;
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all 0.3s ease;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            `;
-
             const style = document.createElement('style');
             style.id = 'mobile-menu-styles';
             style.textContent = `
